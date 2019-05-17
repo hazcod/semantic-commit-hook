@@ -12,4 +12,4 @@ Any commit to your local git repository will be rejected if the first line (the 
 For releasing, I use [go-semantic-release](https://github.com/go-semantic-release/semantic-release).
 
 ## Installation
-```rm -r.git/hooks/ && git clone https://github.com/hazcod/semantic-commit-hook/ .git/hooks```
+```curl https://raw.githubusercontent.com/hazcod/semantic-commit-hook/master/pre-commit > .git/hooks/pre-commit && chmod 500 .git/hooks/pre-commit```
