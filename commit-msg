@@ -5,7 +5,7 @@ if [ -z "$1" ]; then
 	exit 1
 fi
 
-commitTitle="$(cat $1 | head -n1)"
+commitTitle="$(head -n1 "$1")"
 
 if ! echo "$commitTitle" | grep -qE '^(?:feat|fix|docs|style|refactor|perf|test|chore)\((?:\w+|\s|\-|_)+\):'; then
 	echo "Your commit title did not follow semantic versioning: $commitTitle"
