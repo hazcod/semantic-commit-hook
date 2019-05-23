@@ -5,8 +5,15 @@ if [ -z "$1" ]; then
 	exit 1
 fi
 
-commitTitle="$(head -n1 "$1")"
+commitTitle="$(cat $1 | head -n1)"
 
+# ignore merge requests
+if echo "$commitTitle" | grep -qE "^Merge branch \'"; then
+	echo "Commit hook: ignoring branch merge"
+	exit 0
+fi
+
+# check semantic versioning scheme
 if ! echo "$commitTitle" | grep -qE '^(?:feat|fix|docs|style|refactor|perf|test|chore)\((?:\w+|\s|\-|_)+\):'; then
 	echo "Your commit title did not follow semantic versioning: $commitTitle"
 	echo "Please see https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#commit-message-format"
