@@ -14,4 +14,7 @@ Any commit to your local git repository will be rejected if the first line (the 
 For releasing, I use [go-semantic-release](https://github.com/go-semantic-release/semantic-release).
 
 ## Installation
-```curl --fail -o .git/hooks/commit-msg https://raw.githubusercontent.com/hazcod/semantic-commit-hook/master/commit-msg && chmod 500 .git/hooks/commit-msg```
+```shell
+curl --fail -o .git/hooks/commit-msg https://raw.githubusercontent.com/hazcod/semantic-commit-hook/master/commit-msg \
+  && chmod 500 .git/hooks/commit-msg
+```
