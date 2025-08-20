@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5.0.0
       - name: shellcheck
-        uses: reviewdog/action-shellcheck@v1.20
+        uses: reviewdog/action-shellcheck@v1.31
         with:
           github_token: ${{ secrets.github_token }}
           path: 'commit-msg'
